@@ -1,0 +1,41 @@
+{% extends "Roster/base.html" %}
+{% block content %}
+ 
+<div class="centerstage">
+ 
+ 
+  <div class="row">
+ 
+    {% comment %} {% for post in post_list %}
+ 
+    <div class="col-lg-4 col-xs-8 d-flex">
+      <div class="card h-90 w-100">
+        <div class="card-body post flex-fill">
+          <h1 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+          <p class="date card-text">Published on: {{ post.published_date|date:"DD MM YY"}}</p>
+          <a class="card-text" href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approve_comments.count }}</a>
+        </div>
+      </div>
+    </div>
+ 
+    {% endfor %}
+ 
+  </div> {% endcomment %}
+ 
+ 
+  {% for post in post_list %}
+ 
+    <div class="post col-md-4">
+      <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+      <div class="date">
+        <p>Published on: {{ post.published_date|date:"d M Y"}}</p>
+      </div>
+      <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approve_comments.count }}</a>
+    </div>
+ 
+  {% endfor %}
+ 
+</div>
+ 
+{% endblock %}
+ 

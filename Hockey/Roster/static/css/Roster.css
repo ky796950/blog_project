@@ -1,0 +1,63 @@
+.content{
+  padding-top: 100px;
+}
+
+h1{
+  color: #50058E;
+}
+
+.bg-custom{
+  background-color: #50058E;
+}
+ 
+.navbar{
+  font-size: 120%;
+  padding: 0px 30px 0px 30px;
+  color: white;
+}
+ 
+.footer{
+  font-size: 120%;
+  padding: 0px 30px 0px 30px;
+  background-color: #ACACAC;
+}
+ 
+.footer
+.social-area{
+  text-align: right;
+  padding: 7px 0 0 0;
+}
+ 
+#subbtn{
+  background-color: white;
+  color: #50058E;
+}
+ 
+.btn-outline-custom{
+  color: #50058E;
+}
+ 
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+ 
+.nav-link{
+  color: white;
+}
+ 
+.nav-link:hover{
+  color: yellow;
+}
+.mynav{
+  font-size: 150%;
+  color: white;
+}
+ 
+.custom-toggler{
+  border-color: white;
+}
+ 
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+ 

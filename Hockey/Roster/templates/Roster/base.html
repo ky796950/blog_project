@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blog Project</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ 
+    <!-- Medium Style Editor -->
+    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+ 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/Roster.css' %}">
+ 
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One" rel="stylesheet">
+ 
+  </head>
+ 
+  <body class='loader'>
+ 
+<!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-custom fixed-top">
+      <div class="container">
+          <li class="navbar-brand"><a class="mynav" href="post_list.html"><b>KC Blog</b></a></li>
+          <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+ 
+ 
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://www.github.com">Github</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com">LinkedIn</a></li>
+        </ul>
+ 
+<!-- If logged in also show this -->
+        <ul class="navbar-nav right">
+
+          {% if user.is_authenticated %}
+
+          <li class="nav-item"><a class="nav-link" href="post_new.html">New Post</a></li>
+          <li class="nav-item"><a class="nav-link" href="post_draft_list.html">Drafts</a></li>
+          <li class="nav-item"><a class="nav-link" href="post_list.html">Logout</a></li>
+ 
+          <li><a>Welcome: {{ user.username }}</a></li>
+ 
+<!-- If not logged in show this-->
+          {% else %}
+          <li><a class="navbar navbar-right" href="login.html"><span class="fas fa-user"></span></a></li>
+ 
+          {% endif %}
+ 
+        </ul>
+      </div>
+    </nav>
+ 
+<!-- Content section -->
+        <div class="content container">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="blog_posts">
+ 
+                {% block content %}
+                {% endblock %}
+ 
+              </div>
+            </div>
+          </div>
+        </div>
+ 
+<!-- Footer -->
+ 
+<footer class="footer fixed-bottom">
+  <div class="row">
+    <form class="form-inline my-2 my-lg-0 mr-auto">
+      <button id="subbtn" class="btn btn-sm btn-outline-custom my-2 my-sm-2" type="submit"><b>Subscribe</b></button>
+    </form>
+ 
+    <div class="columns medium-4 social-area">
+      <a href="#" class="fab fa-instagram bottomnav-right" style="font-size: 30px; color: #50058E; padding-right: 5px"></a>
+      <a href="#" class="fab fa-strava bottomnav-right" style="font-size: 30px; color: #50058E; padding-right: 5px"></a>
+      <a href="#" class="fab fa-spotify bottomnav-right" style="font-size: 30px; color: #50058E; padding-right: 5px"></a>
+      <a href="#" class="fab fa-facebook-square bottomnav-right" style="font-size: 30px; color: #50058E; padding-right: 5px"></a>
+ 
+ 
+    <div class="copyright" style="font-size: 6px"><strong>© 2019</strong></div>
+ 
+    </div>
+  </div>
+</footer>
+
+<!-- Javascript -->
+<script type="text/javascript" src="{% static 'js/Roster.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  
+  </body>
+</html>
